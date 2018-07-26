@@ -708,7 +708,7 @@ class KafkaClient(object):
             elif 'bootstrap' in self._conns:
                 return 'bootstrap'
 
-            return None
+            raise Errors.NoBrokersAvailable
 
     def set_topics(self, topics):
         """Set specific topics to track for metadata.
